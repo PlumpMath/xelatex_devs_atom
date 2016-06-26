@@ -1,0 +1,56 @@
+
+\TeXXeTstate=1
+\documentclass[10pt,hidelinks]{article}
+\NeedsTeXFormat{LaTeX2e}
+
+\usepackage[no-math]{fontspec}
+
+
+\usepackage{vmargin}
+\usepackage{paracol}
+\usepackage{hyperref}[2012/08/18]
+\usepackage{graphicx}
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\hypersetup{
+    colorlinks=false
+}
+
+\newcommand{\hhebrew}{\fontspec[Ligatures=TeX]{Hadasim CLM:style=BoldOblique}}
+
+\newcommand{\engrus}{\fontspec{Linux Libertine O}}
+% \newcommand{\engrus}{\fontspec{FreeSerif}}
+% \newcommand{\engrus}{\fontspec{FreeMono}}
+
+\newcommand{\courr}{\fontspec{FreeMono}}
+
+\newcommand{\sectionSep}{\vspace{13pt}}
+\newcommand{\itemSep}{\vspace{10pt}}
+
+\newcommand{\sectionFont}{\fontsize{14pt}{13pt}}
+\newcommand{\normalFont}{\fontsize{11pt}{13pt}}
+\newcommand{\fineFont}{\fontsize{8pt}{8pt}}
+\newcommand{\tinyFont}{\fontsize{6pt}{6pt}}
+
+\setpapersize{A4}
+% \setpapersize{custom}{216mm}{356mm}
+\pagenumbering{gobble}
+\setmarginsrb{33pt}{13pt}
+            {20pt}{20pt}
+            {20pt}{20pt}
+            {20pt}{20pt}
+
+\setlength{\parindent}{0pt}
+\textwidth=17cm
